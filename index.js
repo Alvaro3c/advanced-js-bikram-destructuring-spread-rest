@@ -73,7 +73,11 @@ function onlyUniques(...element) {
 // }
 
 function combineAllArrays(...element) {
-    console.log(element);
+    let combined = [];
+    for (let i = 0; i < element.length; i++) {
+        combined.push(...element[i]);
+    }
+    return combined;
 }
 
 let arr1 = [2, 7, 3, 1];
@@ -81,14 +85,11 @@ let arr2 = [2, 7, 4, 12];
 let arr3 = [2, 44, 22, 7, 3, 1];
 let arr4 = [6, 8, 5];
 
+console.log(combineAllArrays(arr1, arr2, arr3, arr4))
+
 
 //11
 function sumAndSquare(...element) {
     return element.reduce((acc, curr) => acc += curr ** 2);
 }
 console.log(sumAndSquare(1, 2, 3, 5))
-/* 
-sumAndSquare(3,4,5)
-
-3**2 + 4**2 + 5**2
-*/
